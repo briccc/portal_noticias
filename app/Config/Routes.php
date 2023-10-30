@@ -30,36 +30,36 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('login', 'Home::login');
-$routes->get('registro', 'Home::registro');
+$routes->get('login', 'Home::login', ['filter' => 'noauth']);
+$routes->get('registro', 'Home::registro', ['filter' => 'noauth']);
 
 
 //rutas de login y registro
-$routes->get('admin', 'Home::login');
-$routes->get('inicio_admin', 'Home::inicio_admin');
-$routes->post('enviarlogin', 'usuario_Controller::auth');
-$routes->get('logout', 'usuario_Controller::logout');
-$routes->get('/registro','Usuario_controller::create');
-$routes->post('enviar-form', 'usuario_controller::formValidation');
+$routes->get('admin', 'Home::login', ['filter' => 'noauth']);
+$routes->get('inicio_admin', 'Home::inicio_admin', ['filter' => 'auth'] );
+$routes->post('enviarlogin', 'usuario_Controller::auth', ['filter' => 'noauth'] );
+$routes->get('logout', 'usuario_Controller::logout', ['filter' => 'auth']);
+$routes->get('/registro','Usuario_controller::create', ['filter' => 'noauth']);
+$routes->post('enviar-form', 'usuario_controller::formValidation', ['filter' => 'noauth']);
 
 
 //rutas de noticias
-$routes->get('listar_noticias','noticias_Controller::listar_noticias');
-$routes->get('nueva_noticia', 'noticias_Controller::nueva_noticia');
-$routes->post('agregar_noticia', 'noticias_Controller::agregar_noticia');
-$routes->get('editar/(:num)', 'noticias_Controller::editar_noticia/$1');
-$routes->post('actualizar', 'noticias_Controller::editar_noticia_validacion');
-$routes->get('eliminar/(:num)', 'noticias_Controller::eliminar_noticia/$1');
-$routes->get('activar/(:num)', 'noticias_Controller::activar_noticia/$1');
+$routes->get('listar_noticias','noticias_Controller::listar_noticias', ['filter' => 'auth']);
+$routes->get('nueva_noticia', 'noticias_Controller::nueva_noticia', ['filter' => 'auth']);
+$routes->post('agregar_noticia', 'noticias_Controller::agregar_noticia', ['filter' => 'auth']);
+$routes->get('editar/(:num)', 'noticias_Controller::editar_noticia/$1', ['filter' => 'auth']);
+$routes->post('actualizar', 'noticias_Controller::editar_noticia_validacion', ['filter' => 'auth']);
+$routes->get('eliminar/(:num)', 'noticias_Controller::eliminar_noticia/$1', ['filter' => 'auth']);
+$routes->get('activar/(:num)', 'noticias_Controller::activar_noticia/$1', ['filter' => 'auth']);
 $routes->get('ver_noticia/(:num)', 'noticias_Controller::ver_noticia/$1');
 
 
 //ruta  usuarios
-$routes->get('usuarios', 'usuario_Controller::listar_usuarios');
-$routes->get('eliminar_usuario/(:num)', 'usuario_Controller::eliminar_usuario/$1');
-$routes->get('activar_usuario/(:num)', 'usuario_Controller::activar_usuario/$1');
-$routes->get('editar_usuario/(:num)', 'usuario_Controller::editar_usuario/$1');
-$routes->post('update', 'usuario_Controller::update');
+$routes->get('usuarios', 'usuario_Controller::listar_usuarios', ['filter' => 'auth']);
+$routes->get('eliminar_usuario/(:num)', 'usuario_Controller::eliminar_usuario/$1', ['filter' => 'auth']);
+$routes->get('activar_usuario/(:num)', 'usuario_Controller::activar_usuario/$1', ['filter' => 'auth']);
+$routes->get('editar_usuario/(:num)', 'usuario_Controller::editar_usuario/$1', ['filter' => 'auth'] );
+$routes->post('update', 'usuario_Controller::update', ['filter' => 'auth'] );
 
 
 

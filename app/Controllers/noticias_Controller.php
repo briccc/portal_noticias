@@ -32,9 +32,15 @@ class noticias_Controller extends BaseController
 
     if ($noticia) {
         $data['noticia'] = $noticia;
+
+        $data['title'] = $noticia['titulo'];
+
+        echo view('front/header', $data);
         echo view('front/detalle_noticia', $data);
+        echo view('front/footer');
     }
 }
+
 
 
     //nueva noticia
