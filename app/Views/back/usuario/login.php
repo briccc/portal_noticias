@@ -1,3 +1,12 @@
+<?php{
+
+// Configura opciones de sesión antes de iniciar la sesión
+ini_set('session.save_path', 'http://localhost/portal_noticias/admin');
+ini_set('session.gc_maxlifetime', 3600); // Establece el tiempo de expiración en segundos
+
+session_start();
+};?>
+
 <div class="container-fluid p-4 d-flex justify-content-center ">
 
   <div class="container col-md-10 p-4 m-5 rounded">

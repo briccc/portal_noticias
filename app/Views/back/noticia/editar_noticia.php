@@ -49,8 +49,8 @@
         <?php echo form_hidden('id_noticia', $noticia['id_noticia']);?>
 
 
-
-        <button type="submit" class='btn btn-sucess'>Modificar</button>
+     
+        <button type="submit" class='btn btn-success'>Modificar</button>
 
     </div>
     <?php form_close();?>

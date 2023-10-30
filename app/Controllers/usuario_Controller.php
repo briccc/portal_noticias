@@ -196,7 +196,6 @@ public function editar_usuario($id=null) {
             'apellido' => 'required|min_length[3]|max_length[50]',
             'correo' => 'required|min_length[3]|max_length[100]|valid_email',
             'usuario' => 'required|min_length[3]',
-            'pass' => 'required|min_length[3]|max_length[100]',
         ], [
             'nombre' => [
             'required' => 'El campo nombre es obligatorio', 
@@ -217,11 +216,7 @@ public function editar_usuario($id=null) {
                 'required' => 'El campo usuario es obligatorio',
                 'min_length' => 'El campo usuario debe tener al menos 3 caracteres',
             ],
-            'pass' => [
-                'required' => 'El campo contraseña es obligatorio',
-                'min_length' => 'El campo contraseña debe tener al menos 3 caracteres',
-                'max_length' => 'El campo contraseña debe tener como maximo 100 caracteres',
-            ],
+  
             
             ]);
 
@@ -233,14 +228,15 @@ public function editar_usuario($id=null) {
                     'apellido' => $request->getPost('apellido'),
                     'correo' => $request->getPost('correo'),
                     'usuario' => $request->getPost('usuario'),
-                    'pass' => password_hash($this->request->getVar('pass'), PASSWORD_BCRYPT),
                     'estado' => 1 
                     ];
     
                     $usuario = new usuarios_Model();
                     $usuario->update($id,$data);
+
+                    session()->set('nombre', $data['nombre']);
     
-                    return redirect()->route('usuarios')->with('mensaje_registro', 'Agregado correctamente');
+                    return redirect()->route('usuarios')->with('mensaje_editado', 'Editado correctamente');
             }
     }
 

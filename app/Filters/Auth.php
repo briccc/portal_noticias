@@ -7,12 +7,13 @@ use CodeIgniter\Filters\FilterInterface;
 
 class Auth implements FilterInterface
 {
-    public function before(RequestInterface $request, $arguments = null) 
-    {
-        if(!session()->get('logged_in') ) {
-            return redirect()->to('/login');
+    $session = session();
+
+        if (!$session->has('logged_in') || $session->get('logged_in') !== true) {
+            return redirect()->to('/'); 
         }
-    }
+
+        return $request;
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {

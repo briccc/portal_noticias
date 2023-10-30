@@ -108,7 +108,7 @@ class noticias_Controller extends BaseController
             $noticia = new noticias_Model();
             $noticia->insert($data);
 
-            return redirect()->route('insertar')->with('mensaje_registro', 'Agregado correctamente');
+            return redirect()->route('listar_noticias')->with('mensaje_registro', 'Agregado correctamente');
 
         }
     }
@@ -196,7 +196,7 @@ class noticias_Controller extends BaseController
                     $noticia = new noticias_Model();
                     $noticia->update($id,$data);
     
-                    return redirect()->route('insertar')->with('mensaje_registro', 'Agregado correctamente');
+                    return redirect()->route('listar_noticias')->with('mensaje_registro', 'Agregado correctamente');
     
                 }
             }
