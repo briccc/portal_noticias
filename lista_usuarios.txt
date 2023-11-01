@@ -1,0 +1,8 @@
+*USUARIOS*
+
+usuario:maria gomez
+contraseña: maria
+
+usuario:bricdiaz
+contraseña: bricia
+
