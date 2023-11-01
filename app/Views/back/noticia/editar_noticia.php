@@ -41,7 +41,7 @@
 
         <div class="form-group"> 
             <label for="imagen"></label>
-            <img src="<?php echo base_url('assets/img/'.$noticia['imagen']);?>" alt="" height="100" width="100">
+            <img src="<?php echo base_url('assets/img/'.$noticia['imagen']);?>" alt="" height="100" width="100" style="object-fit: cover">
             <?php echo form_input(['name' => 'imagen', 'id' => 'imagen', 'type' => 'file']);?>
             <p class="is-danger"><?=session('errors.imagen')?></p>
         </div>
@@ -50,7 +50,7 @@
 
 
      
-        <button type="submit" class='btn btn-success'>Modificar</button>
+        <button type="submit" class='btn btn-success mb-3'>Modificar</button>
 
     </div>
     <?php form_close();?>

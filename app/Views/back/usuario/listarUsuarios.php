@@ -8,8 +8,8 @@
 <div class="container-fluid">
     <h1 class="text-center titulos mt-5 mb-5">Listado de Usuarios</h1>
 
-
-    <table id="mytable" class="mt-5 table  table-striped table-hover">
+<div class=" table-responsive ">
+    <table id="mytable" class="mt-5 table table-striped table-hover">
         <thead>
             <tr>
                 <th>N° de usuario</th>
@@ -43,4 +43,5 @@
                 </tr>
         </tbody>
     </table>
+    </div>
 </div>

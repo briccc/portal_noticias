@@ -1,12 +1,4 @@
-<?php{
-  session_start();
 
-  if (!isset($_SESSION['logged_in'])) {
-      // El usuario no está autenticado, redirige al inicio de sesión
-      header('/admin'); // Reemplaza '/portal_noticias/login' con tu URL de inicio de sesión
-      exit();
-  }
-}?>
 
 <?php if (session()->getFlashdata('msg')) : ?>
                 <div class="alert alert-danger text-center" style="border: 1px solid #b46059; color: #b46059 ">

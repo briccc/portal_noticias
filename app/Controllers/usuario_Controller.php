@@ -180,7 +180,7 @@ public function editar_usuario($id=null) {
    echo view('front/footer');
     }
 
-    public function update($id=null){
+    public function update(){
         $usuarios_model = new usuarios_Model();
 
         $validation = \Config\Services::validation();

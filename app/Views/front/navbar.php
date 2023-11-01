@@ -8,8 +8,8 @@
 
 <nav id="navbar" class="navbar custom-navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img class="rounded-circle" src="assets/img/logo_noticias.png" alt="logo" width="100" height="100">
+        <a class="navbar-brand" href="/">
+            <img class="rounded-circle" src="<?php echo base_url('/assets/img/logo_noticias.png');?>" alt="logo" width="100" height="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

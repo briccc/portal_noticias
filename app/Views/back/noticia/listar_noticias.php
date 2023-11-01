@@ -19,6 +19,7 @@
             <th>Titulo</th>
             <th>Copete</th>
             <th>Cuerpo</th>
+            <th>Autor</th>
             <th>Imagen</th>
             <th>Editar</th>
             <th>Borrar</th>
@@ -32,8 +33,9 @@
                 <td> <?php echo $row['titulo'];?></td>
                 <td> <?php echo $row['copete'];?></td>
                 <td> <?php echo $row['cuerpo'];?></td>
+                <td> <?php echo $row['autor'];?></td>
 
-                <td><img src="<?php echo base_url('assets/img/'.$row['imagen']);?>" alt="" height="100" width="100"></td>
+                <td><img src="<?php echo base_url('assets/img/'.$row['imagen']);?>" alt="" height="100" width="100" style="width: 100px; height: 100px; object-fit: cover;"></td>
                 <td><a class="btn btn-success" href="<?php echo base_url('editar/'.$row['id_noticia']);?>">Editar</a></td>
                 <?php
                 if ($row['noticia_estado']==1)

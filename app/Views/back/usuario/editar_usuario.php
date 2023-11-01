@@ -12,7 +12,7 @@
 
     <h1 class="text-center titulos mt-5 mb-5">Edición de Usuario</h1>
     <div class="w-50 mx-auto"> 
-        <?php echo form_open_multipart('update')?>
+        <?php echo form_open_multipart('update');?>
 
         <div class="form-group">
             <h4><label for="nombre" class="titulos">Nombre</label></h4>

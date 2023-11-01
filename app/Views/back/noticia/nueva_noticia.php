@@ -25,7 +25,6 @@
 
             <div class="form-group">
                 <h4><label for="copete" class="titulos">Copete</label></h4>
-                <label for="copete">Copete</label>
                 <?php echo form_input(['name'=> 'copete', 'id' => 'copete', 'class' => 'form-control', 'placeholder' => 'Ingrese copete de la noticia', 'value' => set_value('copete')]);?>
                 <p class="is-danger">
                     <?=session('errors.copete')?>
